@@ -24,13 +24,13 @@ public class ConsoleDialog {
     public void start() throws IOException {
 
         System.out.println(
-                "       HELLO!!!"+
-                "The app implement such commands:\n" +
-                "1. Who is head of department {department_name}\n" +
-                "2. Show {department_name} statistic.\n"+
-                "3. Show the average salary for department {department_name}\n" +
-                "4. Show count of employee for {department_name}.\n" +
-                "5. Global search by {template}.\n");
+                "       HELLO!!!" +
+                        "The app implement such commands:\n" +
+                        "1. Who is head of department {department_name}\n" +
+                        "2. Show {department_name} statistic.\n" +
+                        "3. Show the average salary for department {department_name}\n" +
+                        "4. Show count of employee for {department_name}.\n" +
+                        "5. Global search by {template}.\n");
 
         startConsoleDialog();
     }
@@ -40,19 +40,19 @@ public class ConsoleDialog {
         while (run) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String input = reader.readLine();
-            if (containsIgnoreCase(input ,"Who is head of department")) {
+            if (containsIgnoreCase(input, "Who is head of department")) {
                 String departmentName = input.replaceAll("(?i)Who is head of department", "").replaceAll("[^a-zA-Z0-9]", "").trim();
                 getLeaderOfDepartment(departmentName);
-            } else if (containsIgnoreCase(input , "Show") && containsIgnoreCase(input , "statistic")) {
+            } else if (containsIgnoreCase(input, "Show") && containsIgnoreCase(input, "statistic")) {
                 String departmentName = input.replaceAll("(?i)Show", "").replace("(?i)statistic", "").replaceAll("[^a-zA-Z0-9]", "").trim();
                 countDegree(departmentName);
-            } else if (containsIgnoreCase(input ,"Show the average salary for department")) {
+            } else if (containsIgnoreCase(input, "Show the average salary for department")) {
                 String departmentName = input.replaceAll("(?i)Show the average salary for department", "").replaceAll("[^a-zA-Z0-9]", "").trim();
                 averageSalaryOfDepartment(departmentName);
-            } else if (containsIgnoreCase(input ,"Show count of employee for")) {
+            } else if (containsIgnoreCase(input, "Show count of employee for")) {
                 String departmentName = input.replaceAll("(?i)Show count of employee for", "").replaceAll("[^a-zA-Z0-9]", "").trim();
                 countWorkerInDepartment(departmentName);
-            } else if (containsIgnoreCase(input ,"Global search by")) {
+            } else if (containsIgnoreCase(input, "Global search by")) {
                 String searchBy = input.replaceAll("(?i)Global search by", "").replaceAll("[^a-zA-Z0-9]", "").trim();
                 globalSearch(searchBy);
             } else if (input.equals("0") || input.equalsIgnoreCase("exit")) {
